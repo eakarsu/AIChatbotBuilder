@@ -2,10 +2,41 @@ const router = require('express').Router();
 const pool = require('../db');
 const auth = require('../middleware/auth');
 
+// GET /api/chatbots?page=&limit=&search=
 router.get('/', auth, async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM chatbots ORDER BY created_at DESC');
-    res.json(result.rows);
+    const { search, page, limit } = req.query;
+    const usePagination = page !== undefined || limit !== undefined;
+    const pageNum = Math.max(1, parseInt(page) || 1);
+    const limitNum = Math.min(100, Math.max(1, parseInt(limit) || 50));
+    const offset = (pageNum - 1) * limitNum;
+
+    let where = 'WHERE 1=1';
+    const params = [];
+    if (search) {
+      params.push(`%${search}%`);
+      where += ` AND (name ILIKE $${params.length} OR description ILIKE $${params.length})`;
+    }
+
+    if (!usePagination) {
+      const result = await pool.query(`SELECT * FROM chatbots ${where} ORDER BY created_at DESC`, params);
+      return res.json(result.rows);
+    }
+
+    const dataParams = [...params, limitNum, offset];
+    const dataQuery = `SELECT * FROM chatbots ${where} ORDER BY created_at DESC LIMIT $${params.length + 1} OFFSET $${params.length + 2}`;
+    const countQuery = `SELECT COUNT(*) FROM chatbots ${where}`;
+
+    const [dataRes, countRes] = await Promise.all([
+      pool.query(dataQuery, dataParams),
+      pool.query(countQuery, params),
+    ]);
+
+    const total = parseInt(countRes.rows[0].count);
+    res.json({
+      data: dataRes.rows,
+      pagination: { page: pageNum, limit: limitNum, total, total_pages: Math.ceil(total / limitNum) },
+    });
   } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
