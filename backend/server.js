@@ -86,6 +86,7 @@ app.use('/api/conversation-miner', require('./routes/conversationMiner')); // ap
 app.use('/api/sentiment-escalation', require('./routes/sentimentEscalation')); // apply pass 6 — audit custom suggestion
 
 app.use('/api/crm-integrations', require('./routes/crmIntegrations')); // apply pass 6 — audit custom suggestion
+app.use('/api/custom-views', require('./routes/customViews'));
 app.listen(PORT, () => {
   console.log(`  Backend running on http://localhost:${PORT}`);
   console.log(`  CORS allowed origins: ${allowedOrigins.join(', ')}`);

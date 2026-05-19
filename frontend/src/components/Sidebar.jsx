@@ -12,6 +12,7 @@ const navItems = [
   { path: '/kb-relevance', icon: 'fa-solid fa-magnifying-glass', label: 'KB Relevance' },
   { path: '/ai-results', icon: 'fa-solid fa-clock-rotate-left', label: 'AI Results History' },
   { path: '/ai-tools-mining', icon: 'fa-solid fa-magnifying-glass-chart', label: 'Mining & Sentiment' },
+  { path: '/custom-views', icon: 'fa-solid fa-eye', label: 'Bot Views' },
   { section: 'Content' },
   { path: '/knowledge-base', icon: 'fa-solid fa-book', label: 'Knowledge Base' },
   { path: '/templates', icon: 'fa-solid fa-clone', label: 'Templates' },

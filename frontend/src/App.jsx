@@ -35,6 +35,7 @@ import AIResults from './pages/AIResults';
 import Notifications from './pages/Notifications';
 import Reports from './pages/Reports';
 import AIBacklog from './pages/AIBacklog';
+import CustomViewsPage from './pages/CustomViewsPage';
 
 function ProtectedRoute({ children }) {
   const token = localStorage.getItem('token');
@@ -98,6 +99,7 @@ export default function App() {
         <Route path="/notifications" element={<ProtectedRoute><AppLayout><Notifications /></AppLayout></ProtectedRoute>} />
         <Route path="/reports" element={<ProtectedRoute><AppLayout><Reports /></AppLayout></ProtectedRoute>} />
         <Route path="/ai-tools-mining" element={<ProtectedRoute><AppLayout><AIBacklog /></AppLayout></ProtectedRoute>} />
+        <Route path="/custom-views" element={<ProtectedRoute><AppLayout><CustomViewsPage /></AppLayout></ProtectedRoute>} />
       </Routes>
     </BrowserRouter>
   );
