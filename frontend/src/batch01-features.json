@@ -1,0 +1,104 @@
+{
+  "project": "AIChatbotBuilder",
+  "marker": "// === Batch 01 Gaps & Frontend Mounts ===",
+  "features": [
+    {
+      "slug": "omnichannel-routing-agent-escalating-across-sms-em",
+      "component": "OmnichannelRoutingAgentEscalatingAcrossSmsEmPage",
+      "label": "Omnichannel routing agent escalating across SMS, email, chat, and voice with context handoff",
+      "endpoint": "/api/cf-omnichannel-routing-agent-escalating-across-sms-em",
+      "kind": "cfs"
+    },
+    {
+      "slug": "conversation-mining-auto-generating-intents-faqs-f",
+      "component": "ConversationMiningAutoGeneratingIntentsFaqsFPage",
+      "label": "Conversation mining auto-generating intents/FAQs from production logs",
+      "endpoint": "/api/cf-conversation-mining-auto-generating-intents-faqs-f",
+      "kind": "cfs"
+    },
+    {
+      "slug": "sentiment-triggered-escalation-to-human-agents-in-",
+      "component": "SentimentTriggeredEscalationToHumanAgentsInPage",
+      "label": "Sentiment-triggered escalation to human agents in real time",
+      "endpoint": "/api/cf-sentiment-triggered-escalation-to-human-agents-in-",
+      "kind": "cfs"
+    },
+    {
+      "slug": "integrations-with-salesforce-hubspot-zendesk-inter",
+      "component": "IntegrationsWithSalesforceHubspotZendeskInterPage",
+      "label": "Integrations with Salesforce, HubSpot, Zendesk, Intercom, and Shopify",
+      "endpoint": "/api/cf-integrations-with-salesforce-hubspot-zendesk-inter",
+      "kind": "cfs"
+    },
+    {
+      "slug": "only-7-mounted-ai-endpoints-for-33-routes-feature-",
+      "component": "Only7MountedAiEndpointsFor33RoutesFeaturePage",
+      "label": "Only 7 mounted AI endpoints for 33 routes \u2014 feature parity gap",
+      "endpoint": "/api/gap-only-7-mounted-ai-endpoints-for-33-routes-feature-",
+      "kind": "gap"
+    },
+    {
+      "slug": "no-ai-voice-ivr-channel-support",
+      "component": "NoAiVoiceIvrChannelSupportPage",
+      "label": "No AI voice/IVR channel support",
+      "endpoint": "/api/gap-no-ai-voice-ivr-channel-support",
+      "kind": "gap"
+    },
+    {
+      "slug": "no-ai-multi-bot-orchestration-router-agent",
+      "component": "NoAiMultiBotOrchestrationRouterAgentPage",
+      "label": "No AI multi-bot orchestration (router agent)",
+      "endpoint": "/api/gap-no-ai-multi-bot-orchestration-router-agent",
+      "kind": "gap"
+    },
+    {
+      "slug": "no-ai-self-improving-flow-optimizer-based-on-outco",
+      "component": "NoAiSelfImprovingFlowOptimizerBasedOnOutcoPage",
+      "label": "No AI self-improving flow optimizer based on outcomes",
+      "endpoint": "/api/gap-no-ai-self-improving-flow-optimizer-based-on-outco",
+      "kind": "gap"
+    },
+    {
+      "slug": "no-ai-conversation-quality-scoring",
+      "component": "NoAiConversationQualityScoringPage",
+      "label": "No AI conversation-quality scoring",
+      "endpoint": "/api/gap-no-ai-conversation-quality-scoring",
+      "kind": "gap"
+    },
+    {
+      "slug": "no-live-chat-takeover-ui-for-human-agents-channels",
+      "component": "NoLiveChatTakeoverUiForHumanAgentsChannelsPage",
+      "label": "No live-chat takeover UI for human agents (channels module exists but no operator console)",
+      "endpoint": "/api/gap-no-live-chat-takeover-ui-for-human-agents-channels",
+      "kind": "gap"
+    },
+    {
+      "slug": "no-multi-language-flow-translation-tooling",
+      "component": "NoMultiLanguageFlowTranslationToolingPage",
+      "label": "No multi-language flow translation tooling",
+      "endpoint": "/api/gap-no-multi-language-flow-translation-tooling",
+      "kind": "gap"
+    },
+    {
+      "slug": "no-conversation-design-version-control-branching",
+      "component": "NoConversationDesignVersionControlBranchingPage",
+      "label": "No conversation-design version control / branching",
+      "endpoint": "/api/gap-no-conversation-design-version-control-branching",
+      "kind": "gap"
+    },
+    {
+      "slug": "no-sdk-embed-code-generator",
+      "component": "NoSdkEmbedCodeGeneratorPage",
+      "label": "No SDK / embed code generator",
+      "endpoint": "/api/gap-no-sdk-embed-code-generator",
+      "kind": "gap"
+    },
+    {
+      "slug": "no-marketplace-for-community-contributed-flows",
+      "component": "NoMarketplaceForCommunityContributedFlowsPage",
+      "label": "No marketplace for community-contributed flows",
+      "endpoint": "/api/gap-no-marketplace-for-community-contributed-flows",
+      "kind": "gap"
+    }
+  ]
+}

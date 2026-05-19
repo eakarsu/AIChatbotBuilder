@@ -28,6 +28,14 @@ import Tags from './pages/Tags';
 import Broadcasts from './pages/Broadcasts';
 import Forms from './pages/Forms';
 import Plugins from './pages/Plugins';
+import FlowVisualizer from './pages/FlowVisualizer';
+import ContextVariables from './pages/ContextVariables';
+import KbRelevance from './pages/KbRelevance';
+import AIResults from './pages/AIResults';
+import Notifications from './pages/Notifications';
+import Reports from './pages/Reports';
+import AIBacklog from './pages/AIBacklog';
+import CustomViewsPage from './pages/CustomViewsPage';
 
 function ProtectedRoute({ children }) {
   const token = localStorage.getItem('token');
@@ -84,6 +92,14 @@ export default function App() {
         <Route path="/broadcasts" element={<ProtectedRoute><AppLayout><Broadcasts /></AppLayout></ProtectedRoute>} />
         <Route path="/forms" element={<ProtectedRoute><AppLayout><Forms /></AppLayout></ProtectedRoute>} />
         <Route path="/plugins" element={<ProtectedRoute><AppLayout><Plugins /></AppLayout></ProtectedRoute>} />
+        <Route path="/flow-visualizer" element={<ProtectedRoute><AppLayout><FlowVisualizer /></AppLayout></ProtectedRoute>} />
+        <Route path="/context-variables" element={<ProtectedRoute><AppLayout><ContextVariables /></AppLayout></ProtectedRoute>} />
+        <Route path="/kb-relevance" element={<ProtectedRoute><AppLayout><KbRelevance /></AppLayout></ProtectedRoute>} />
+        <Route path="/ai-results" element={<ProtectedRoute><AppLayout><AIResults /></AppLayout></ProtectedRoute>} />
+        <Route path="/notifications" element={<ProtectedRoute><AppLayout><Notifications /></AppLayout></ProtectedRoute>} />
+        <Route path="/reports" element={<ProtectedRoute><AppLayout><Reports /></AppLayout></ProtectedRoute>} />
+        <Route path="/ai-tools-mining" element={<ProtectedRoute><AppLayout><AIBacklog /></AppLayout></ProtectedRoute>} />
+        <Route path="/custom-views" element={<ProtectedRoute><AppLayout><CustomViewsPage /></AppLayout></ProtectedRoute>} />
       </Routes>
     </BrowserRouter>
   );

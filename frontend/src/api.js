@@ -48,8 +48,36 @@ const api = {
   aiImproveResponse: (data) => request('/ai/improve-response', { method: 'POST', body: JSON.stringify(data) }),
   aiKbQuery: (data) => request('/ai/kb-query', { method: 'POST', body: JSON.stringify(data) }),
 
+  // New AI endpoints
+  aiFlowVisualizer: (data) => request('/ai/flow-visualizer', { method: 'POST', body: JSON.stringify(data) }),
+  aiContextVariables: (data) => request('/ai/context-variables', { method: 'POST', body: JSON.stringify(data) }),
+  aiKbRelevance: (data) => request('/ai/kb-relevance', { method: 'POST', body: JSON.stringify(data) }),
+  aiToneAnalyzer: (data) => request('/ai/tone-analyzer', { method: 'POST', body: JSON.stringify(data) }),
+  aiEscalationDetector: (data) => request('/ai/escalation-detector', { method: 'POST', body: JSON.stringify(data) }),
+
+  // Apply pass 4 backlog AI endpoints
+  aiMineIntents: (data) => request('/ai/mine-intents', { method: 'POST', body: JSON.stringify(data) }),
+  aiSentimentEscalation: (data) => request('/ai/sentiment-escalation', { method: 'POST', body: JSON.stringify(data) }),
+
+  // A/B Tests
+  abTestList: () => request('/ab-tests'),
+  abTestGet: (id) => request(`/ab-tests/${id}`),
+  abTestCreate: (data) => request('/ab-tests', { method: 'POST', body: JSON.stringify(data) }),
+  abTestUpdate: (id, data) => request(`/ab-tests/${id}`, { method: 'PUT', body: JSON.stringify(data) }),
+  abTestDelete: (id) => request(`/ab-tests/${id}`, { method: 'DELETE' }),
+  abTestResults: (id) => request(`/ab-tests/${id}/results`),
+  abTestRecord: (id, data) => request(`/ab-tests/${id}/record`, { method: 'POST', body: JSON.stringify(data) }),
+
   // Conversation messages
   addMessage: (convId, data) => request(`/conversations/${convId}/messages`, { method: 'POST', body: JSON.stringify(data) }),
+
+  // AI Results history (paginated)
+  aiResultsList: (params = {}) => {
+    const qs = new URLSearchParams(params).toString();
+    return request(`/ai-results${qs ? `?${qs}` : ''}`);
+  },
+  aiResultDetail: (id) => request(`/ai-results/${id}`),
+  aiResultDelete: (id) => request(`/ai-results/${id}`, { method: 'DELETE' }),
 };
 
 export default api;
