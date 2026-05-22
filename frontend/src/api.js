@@ -78,6 +78,7 @@ const api = {
   },
   aiResultDetail: (id) => request(`/ai-results/${id}`),
   aiResultDelete: (id) => request(`/ai-results/${id}`, { method: 'DELETE' }),
+  handoffPolicyTest: (data) => request('/handoff-policy/test', { method: 'POST', body: JSON.stringify(data) }),
 };
 
 export default api;

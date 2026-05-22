@@ -87,6 +87,7 @@ app.use('/api/sentiment-escalation', require('./routes/sentimentEscalation')); /
 
 app.use('/api/crm-integrations', require('./routes/crmIntegrations')); // apply pass 6 — audit custom suggestion
 app.use('/api/custom-views', require('./routes/customViews'));
+app.use('/api/handoff-policy', require('./routes/handoffPolicyTester'));
 app.listen(PORT, () => {
   console.log(`  Backend running on http://localhost:${PORT}`);
   console.log(`  CORS allowed origins: ${allowedOrigins.join(', ')}`);

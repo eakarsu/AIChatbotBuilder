@@ -37,6 +37,12 @@ import Reports from './pages/Reports';
 import AIBacklog from './pages/AIBacklog';
 import CustomViewsPage from './pages/CustomViewsPage';
 
+import CodexCustomVizFeature from './pages/CodexCustomVizFeature';
+import CodexOperationsFeature from './pages/CodexOperationsFeature';
+
+import TimelineView from './pages/TimelineView';
+import HandoffPolicyTester from './pages/HandoffPolicyTester';
+
 function ProtectedRoute({ children }) {
   const token = localStorage.getItem('token');
   if (!token) return <Navigate to="/login" />;
@@ -64,6 +70,10 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/insights/timeline" element={<ProtectedRoute><TimelineView /></ProtectedRoute>} />
+        <Route path="/codex/custom-viz" element={<ProtectedRoute><CodexCustomVizFeature /></ProtectedRoute>} />
+        <Route path="/codex/operations" element={<ProtectedRoute><CodexOperationsFeature /></ProtectedRoute>} />
+
         <Route path="/login" element={<Login onLogin={() => setAuth(true)} />} />
         <Route path="/" element={<ProtectedRoute><AppLayout><Dashboard /></AppLayout></ProtectedRoute>} />
         <Route path="/chatbots" element={<ProtectedRoute><AppLayout><Chatbots /></AppLayout></ProtectedRoute>} />
@@ -100,6 +110,7 @@ export default function App() {
         <Route path="/reports" element={<ProtectedRoute><AppLayout><Reports /></AppLayout></ProtectedRoute>} />
         <Route path="/ai-tools-mining" element={<ProtectedRoute><AppLayout><AIBacklog /></AppLayout></ProtectedRoute>} />
         <Route path="/custom-views" element={<ProtectedRoute><AppLayout><CustomViewsPage /></AppLayout></ProtectedRoute>} />
+        <Route path="/handoff-policy" element={<ProtectedRoute><AppLayout><HandoffPolicyTester /></AppLayout></ProtectedRoute>} />
       </Routes>
     </BrowserRouter>
   );
